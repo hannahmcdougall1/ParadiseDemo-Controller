@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PARADISE DEMO</title>
+    <link rel="stylesheet" type="text/css" href="styleindex.css" />
+</head>
+
+<body>
+    <div>
+        <img src="anavation-logo1.png"> </img>
+    </div>
+
+    <script>
+        function start() {
+            var myHeaders = new Headers();
+            myHeaders.append("x-api-key", "eVk32uye0Ia9RFgJIFmka1WMl5jI9FIdaSPQSoQA");
+
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+
+            fetch("https://dc4vwhaxwl.execute-api.us-gov-east-1.amazonaws.com/dev/start-demo/", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+        }
+
+        function stop() {
+            var myHeaders = new Headers();
+            myHeaders.append("x-api-key", "eVk32uye0Ia9RFgJIFmka1WMl5jI9FIdaSPQSoQA");
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "data": "test 2022-06-17T20:51:19.084Z"
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch("https://dc4vwhaxwl.execute-api.us-gov-east-1.amazonaws.com/dev/stop-demo/", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+        }
+    </script>
+
+    <div class="rec">
+        <h1>PARADISE Demo</h1>
+        <h3>Start the demo: 
+            <button onclick="start()">Start</button> 
+        </h3>
+        <h3>End the demo:
+            <button onClick="stop()">Stop</button>
+        </h3>
+    </div>
+</body>
+
+</html>
