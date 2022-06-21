@@ -7,9 +7,6 @@
 </head>
 
 <body>
-    <div>
-        <img src="anavation-logo1.png"> </img>
-    </div>
 
     <script>
         function start() {
@@ -51,14 +48,24 @@
         }
     </script>
 
-    <div class="rec">
-        <h1>PARADISE Demo</h1>
-        <h3>Start the demo: 
-            <button onclick="start()">Start</button> 
-        </h3>
-        <h3>End the demo:
-            <button onClick="stop()">Stop</button>
-        </h3>
+    <div class="row">
+        <div class="column">
+            <div>
+                <img src="anavation-logo1.png" />
+                <br>
+                <h1>PARADISE Demo</h1>
+            </div>
+        </div>
+        <div class="column rightcol">
+            <div>
+                <h2>Start the demo:
+                    <button style="background-color: green" onclick="start()">Start</button>
+                </h2>
+                <h2>End the demo:
+                    <button onClick="stop()">Stop</button>
+                </h2>
+            </div>
+        </div>
     </div>
 </body>
 
