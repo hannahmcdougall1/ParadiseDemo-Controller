@@ -11,7 +11,7 @@
     <script>
         function start() {
             var myHeaders = new Headers();
-            myHeaders.append("x-api-key", "eVk32uye0Ia9RFgJIFmka1WMl5jI9FIdaSPQSoQA");
+            myHeaders.append("x-api-key", document.getElementById("apiKey").value);
 
             var requestOptions = {
                 method: 'POST',
@@ -27,7 +27,7 @@
 
         function stop() {
             var myHeaders = new Headers();
-            myHeaders.append("x-api-key", "eVk32uye0Ia9RFgJIFmka1WMl5jI9FIdaSPQSoQA");
+            myHeaders.append("x-api-key", document.getElementById("apiKey").value);
             myHeaders.append("Content-Type", "application/json");
 
             var raw = JSON.stringify({
@@ -58,6 +58,9 @@
         </div>
         <div class="column rightcol">
             <div>
+                <h2>API key:
+                    <input id="apiKey" type="password"/>
+                </h2>
                 <h2>Start the demo:
                     <button style="background-color: green" onclick="start()">Start</button>
                 </h2>
